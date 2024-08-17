@@ -9,8 +9,11 @@ import rainIcon from "../assets/rain.png";
 import snowIcon from "../assets/snow.png";
 import windIcon from "../assets/wind.png";
 
+
+
 const Weather = () => {
   const inputRef = useRef();
+  const REACT_APP_API_KEY="b6866b7c9669049f707c42485d93f268"
 
   const [weatherData, setWeatherData] = useState(false);
 
@@ -32,7 +35,7 @@ const Weather = () => {
   };
   const searchFunc = async (city) => {
     try {
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.REACT_APP_API_KEY}`;
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${REACT_APP_API_KEY}`;
       const response = await fetch(url);
       const data = await response.json();
 
